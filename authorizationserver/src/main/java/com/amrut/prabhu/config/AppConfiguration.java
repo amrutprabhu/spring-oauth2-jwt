@@ -10,7 +10,7 @@ import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenCo
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
 @Configuration
-public class ApplicationConfiguration {
+public class AppConfiguration {
 
   @Bean
   public JdbcClientDetailsService jdbcClientDetailsService(DataSource dataSource){

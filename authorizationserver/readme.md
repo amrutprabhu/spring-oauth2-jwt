@@ -59,4 +59,6 @@ Date: Sat, 27 Jul 2019 19:56:14 GMT
 {"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsid29yayJdLCJ1c2VyX25hbWUiOiJhbXJ1dCIsInNjb3BlIjpbInJlYWQiXSwiZXhwIjoxNTY0MjY3Mzc0LCJhdXRob3JpdGllcyI6WyJST0xFX3VzZXIiXSwianRpIjoiOTNiMmM2MDMtYzM1OC00MTRiLWIxZGYtYTQwM2VlNDFjZjZiIiwiY2xpZW50X2lkIjoiY2xpZW50In0.XzKzmbpXJD4MgBqOEncdQlTejT8AkKlxYhLKoXN74lE","token_type":"bearer","expires_in":9999,"scope":"read","jti":"93b2c603-c358-414b-b1df-a403ee41cf6b"}⏎
 ```
 
-
+### Approval from user
+After the user authenticates, we can ask for scope approval like read scope etc.
+Set the approval handler in the authorization server endpoint.

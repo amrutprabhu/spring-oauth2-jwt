@@ -35,6 +35,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
   @Override
   public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
     endpoints
+       // .userApprovalHandler(userApprovalHandler) // Only for asking approval from user e.g read scope etc. during authorization_code flow
         .authenticationManager(authenticationManager)
         .tokenStore(tokenStore)
         .accessTokenConverter(tokenConverter);
