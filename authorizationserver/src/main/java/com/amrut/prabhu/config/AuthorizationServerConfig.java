@@ -7,6 +7,7 @@ import org.springframework.security.oauth2.config.annotation.configurers.ClientD
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
+import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.client.JdbcClientDetailsService;
 import org.springframework.security.oauth2.provider.token.AccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.TokenStore;
@@ -35,10 +36,18 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
   @Override
   public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
     endpoints
-       // .userApprovalHandler(userApprovalHandler) // Only for asking approval from user e.g read scope etc. during authorization_code flow
+        // .userApprovalHandler(userApprovalHandler) // Only for asking approval from user e.g read scope etc. during authorization_code flow
         .authenticationManager(authenticationManager)
         .tokenStore(tokenStore)
         .accessTokenConverter(tokenConverter);
+
+  }
+
+  @Override
+  public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
+    security
+        .tokenKeyAccess("hasAuthority('ROLE_CLIENT')")
+        .checkTokenAccess("hasAuthority('ROLE_CLIENT')");
 
   }
 }

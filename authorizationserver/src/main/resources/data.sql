@@ -12,7 +12,7 @@ create table oauth_client_details (
   autoapprove VARCHAR(256)
 );
 
-insert into oauth_client_details values('client','work','secret','read','password','http://www.google.co.in','user',10000,10000,'{}','true')
+insert into oauth_client_details values('client','resource1','secret','read','password','http://www.google.co.in','ROLE_CLIENT',10000,10000,'{}','true')
 
 -- for authorization code grant type
 -- insert into oauth_client_details values('client','work','secret','read','authorization_code','http://www.google.co.in','user',10000,10000,'{}','true')
